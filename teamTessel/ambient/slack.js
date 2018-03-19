@@ -3,7 +3,7 @@ const slackWebhookUrl = 'https://hooks.slack.com/services/T024FPYBQ/B9RT7LYEM/Ex
 
 const spamSlack = new IncomingWebhook(slackWebhookUrl);
 
-// spamSlack.send('Add this line to your ambient.js: const Slack = require("./slack.js")', (error, resp) => {
+// spamSlack.send('Your message here.', (error, resp) => {
 //   if (error) {
 //     return console.error(error);
 //   }
@@ -18,6 +18,7 @@ const Slack = function(message) {
     console.log('Notification sent');
 })}
 
+Slack('Testing...')
+
 module.exports = Slack;
 
-const Slack = require('./slack.js')
