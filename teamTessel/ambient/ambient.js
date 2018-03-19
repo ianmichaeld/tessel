@@ -11,9 +11,18 @@ ambient.on('ready', function () {
       ambient.getSoundLevel( function(err, sounddata) {
         if (err) throw err;
         console.log("Light level:", lightdata.toFixed(8), " ", "Sound Level:", sounddata.toFixed(8));
+        if (sounddata > .1) {
+          console.log('I hear you');
+        }
+
+        if(lightdata < .01) {
+          console.log('its dark in here')
+        }
+
       });
     });
-  }, 500); // The readings will happen every .5 seconds
+  }, 1000);
+   // The readings will happen every .5 seconds
 });
 
 ambient.on('error', function (err) {
